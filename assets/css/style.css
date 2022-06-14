@@ -1,0 +1,298 @@
+/* Geral ---------------------------------- */
+:root {
+    /* light theme */
+    --primary-white: #F6FFF8;
+    --secondary-white: #EDEDE9;
+    --primary-blue: #0096C7;
+    --secondary-blue: #00B4D8;
+
+    /* dark theme */
+    --primary-dark: #000;
+    --secondary-dark: #212529;
+    --primary-purple: #240046;
+    --secondary-purple: #5A189A;
+    --tertiary-purple: #7C20D4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background: var(--primary-white);
+}
+
+body.menu-active {
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    margin: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 10px;
+}
+
+/* Header ---------------------------------- */
+header {
+    height: 600px;
+    background: url('../images/banner.jpg') center, linear-gradient(to bottom, #015092, #012341);
+    background-size: cover;
+    border-radius: 0 0 80px 0;
+    box-shadow: 0 12px 18px rgba(0, 150, 199, 0.40);
+    padding: 20px 0;
+}
+
+header nav .logo {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: 21.6px;
+    font-weight: 600;
+    text-decoration: none;
+    grid-column: 1 / 4;
+}
+
+header nav .menu-hamburger {
+    grid-column: 4 / 7;
+    width: 25px;
+    margin-left: auto;
+    background: none;
+    border: none;
+    transition: 0.7s ease;
+}
+
+header nav .menu-hamburger .bar1,
+header nav .menu-hamburger .bar2,
+header nav .menu-hamburger .bar3 {
+    background: #fff;
+    height: 2.5px;
+    width: 100%;
+    transition: 0.7s ease;
+}
+
+header nav .menu-hamburger .bar2 {
+    margin: 6px 0;
+}
+
+header nav .menu-hamburger.active {
+    padding-left: 3.66px;
+}
+
+header nav .menu-hamburger.active .bar1 {
+    transform: rotate(45deg) translateY(3.5px);
+}
+
+header nav .menu-hamburger.active .bar2 {
+    opacity: 0;
+    margin: 0;
+}
+
+header nav .menu-hamburger.active .bar3 {
+    transform: rotate(-405deg) translateY(-3.5px);
+}
+
+header nav ul {
+    padding: 20px 0;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 110vh;
+    width: 70vw;
+    max-width: 0;
+    background: rgba(0, 180, 216, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    overflow: hidden;
+    transition: max-width 0.75s ease;
+    z-index: 9999;
+}
+
+header nav ul li {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-indent: 30px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+header nav ul.active {
+    max-width: 100%;
+}
+
+header .header-content {
+    margin-top: 105px;
+}
+
+header .header-content h1 {
+    color: var(--primary-blue);
+    font-size: 36px;
+    font-weight: 600;
+    grid-column: 1 / 7;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    height: 132px;
+}
+
+header .header-content h1 span {
+    color: #fff;
+}
+
+header .header-content p {
+    color: #fff;
+    grid-column: 1 / 7;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 40px 0;
+}
+
+header .header-content a {
+    background: #fff;
+    grid-column: 1 / 5;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    border-radius: 12px;
+    border: none;
+    color: #000;
+    text-decoration: none;
+}
+
+/* About me ------------------------------------ */
+#about {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#about .illustration {
+    display: none;
+}
+
+#about .about-content {
+    padding: 15px 15px 30px 15px;
+    color: #fff;
+    grid-column: 1 / 7;
+    background: var(--secondary-blue);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 6px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+#about .about-content h1 {
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+#about .about-content p {
+    text-align: justify;
+    line-height: 29px;
+    margin-bottom: 30px;
+}
+
+#about .about-content h2 {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 27px;
+}
+
+#about .about-content h2 span {
+    color: #0067B1;
+    text-decoration: underline;
+}
+
+/* Technologies ---------------------------- */
+#technologies h1 {
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0 4px 4px rgba(0, 150, 199, 0.25);
+    margin-bottom: 30px;
+}
+
+#technologies h1::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--secondary-blue);
+}
+
+#technologies .technologies-topics {
+    background: var(--secondary-blue);
+}
+
+#technologies .technologies-topics div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-sizing: content-box;
+    padding: 40px;
+    position: relative;
+}
+
+#technologies .technologies-topics div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 0;
+    background: var(--primary-blue);
+    z-index: 1;
+    transition: max-width 0.3s ease;
+}
+
+#technologies .technologies-topics div i {
+    font-size: 120px;
+    z-index: 3;
+    transition: transform 0.5s ease, text-shadow 0.5s ease;
+}
+
+#technologies .technologies-topics div span {
+    position: absolute;
+    opacity: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    z-index: 2;
+    transition: transform 0.5s ease, opacity 0.4s ease-out;
+}
+
+#technologies .technologies-topics div.on {
+    box-shadow: 2px 10px 15px rgba(36, 0, 70, 0.40);
+    justify-content: space-around;
+    transition: box-shadow 0.3s ease;
+}
+
+#technologies .technologies-topics div.on::before {
+    max-width: 100%;
+}
+
+#technologies .technologies-topics div.on i {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+    transform: translateX(-80px);
+}
+
+#technologies .technologies-topics div.on span {
+    opacity: 1;
+    transform: translateX(80px);
+}
