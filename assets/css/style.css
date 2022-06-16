@@ -113,6 +113,7 @@ header nav ul {
     overflow: hidden;
     transition: max-width 0.75s ease;
     z-index: 9999;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.25);
 }
 
 header nav ul li {
@@ -236,6 +237,7 @@ header .header-content a {
 
 #technologies .technologies-topics {
     background: var(--secondary-blue);
+    filter: drop-shadow(0px 12px 16px rgba(0, 150, 199, 0.25));
 }
 
 #technologies .technologies-topics div {
@@ -295,4 +297,191 @@ header .header-content a {
 #technologies .technologies-topics div.on span {
     opacity: 1;
     transform: translateX(80px);
+}
+
+/* Skills ----------------------------------- */
+#skills {
+    background-color: var(--secondary-white);
+    padding-top: 40px;
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.25);
+}
+
+#skills .skills-content {
+    grid-column: 1 / 7;
+    margin-bottom: 30px;
+}
+
+#skills .skills-content h1 {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--primary-blue);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin-bottom: 30px;
+}
+
+#skills .skills-content h1::before {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--secondary-blue);
+}
+
+#skills .skills-content ul {
+    margin-left: 22px;
+}
+
+#skills .skills-content ul li {
+    margin-bottom: 10px;
+}
+
+#skills .skills-content ul li span {
+    font-weight: 700;
+}
+
+#skills img {
+    grid-column: 1 / 7;
+    margin-bottom: 30px;
+}
+
+/* Swiper Customizations ------------------------- */
+.swiper-pagination-progressbar {
+    background: none;
+}
+
+.swiper {
+    position: initial;
+}
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: var(--secondary-blue);
+}
+
+/* Portfolio ---------------------------------- */
+#portfolio {
+    padding-top: 40px;
+}
+
+#portfolio h1.container {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--primary-blue);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#portfolio h1.container::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--secondary-blue);
+}
+
+#portfolio .portfolio-content {
+    background: var(--secondary-white);
+    position: relative;
+}
+
+#portfolio .portfolio-content .prev,
+#portfolio .portfolio-content .next {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#portfolio .portfolio-content .prev {
+    grid-column: 6;
+}
+
+#portfolio .portfolio-content .next {
+    margin-left: 50px;
+    grid-column: 7;
+}
+
+#portfolio .portfolio-content .prev i,
+#portfolio .portfolio-content .next i {
+    font-size: 36px;
+    color: var(--primary-blue);
+}
+
+#portfolio .portfolio-content .prev.swiper-button-disabled i,
+#portfolio .portfolio-content .next.swiper-button-disabled i {
+    color: rgba(0, 150, 199, 0.40);
+}
+
+#portfolio .portfolio-content .swiper-wrapper {
+    grid-column: 1 / 7;
+}
+
+#portfolio .portfolio-content .card {
+    background: var(--primary-blue);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    height: 525px;
+    position: relative;
+}
+
+#portfolio .portfolio-content .card img {
+    width: 100%;
+}
+
+#portfolio .portfolio-content .card .card-content {
+    padding: 20px;
+    color: #fff;
+}
+
+#portfolio .portfolio-content .card .card-content a {
+    color: #fff;
+}
+
+#portfolio .portfolio-content .card .card-content h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#portfolio .portfolio-content .card .card-content p {
+    line-height: 29px;
+    font-weight: 400;
+    text-align: justify;
+}
+
+#portfolio .portfolio-content .card .card-content p:nth-child(2) {
+    display: none;
+}
+
+#portfolio .portfolio-content .card .card-content div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+#portfolio .portfolio-content .card .card-content div a {
+    background: var(--secondary-blue);
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-weight: 500;
+    line-height: 28.5px;
+}
+
+#portfolio .portfolio-content .card .card-content div a i {
+    margin-left: 10px;
+    font-size: 20px;
 }

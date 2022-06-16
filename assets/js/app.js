@@ -12,6 +12,18 @@ const typed = new Typed('#type-area', {
     loop: true
 });
 
+const swiper = new Swiper('.swiper', {
+    spaceBetween: 20,
+    pagination: {
+        el: '.swiper-pagination',
+        type:'progressbar'
+    },
+    navigation: {
+        nextEl: '.next',
+        prevEl: '.prev'
+    }
+});
+
 VanillaTilt.init(cv_download);
 
 menu_hamburger.addEventListener('click', () => {
@@ -22,9 +34,10 @@ menu_hamburger.addEventListener('click', () => {
 
 window.addEventListener('scroll', () => {
     const calc = Math.ceil((scrollY - 975) / 200);
-    const topicOn = calc >= 0 ? calc : 0;
-    
-    technologies_topics.forEach((tec, index) => {
+    let topicOn = calc >= 0 ? calc : 0;
+    topicOn = topicOn >= 8 ? 8 : topicOn;
+
+    technologies_topics.forEach(tec => {
         if(tec != technologies_topics[topicOn]) tec.classList.remove('on');
     });
 
