@@ -4,12 +4,14 @@ const cv_download = document.querySelector('.header-content a');
 const technologies_topics = document.querySelectorAll('.technologies-topics div');
 const scroll_areas = document.querySelectorAll('#about, #technologies, #skills,  #portfolio, #contact');
 
+//Dark-mode control with localStorage
 if(localStorage.length != 0) {
     if(localStorage.getItem('dark-mode') == 'on') {
         document.body.classList.toggle('dark-mode');
     } 
 }
 
+//Typed JS (lib)
 const typed = new Typed('#type-area', {
     strings: ['Desenvolvedor Web Front-End', 'Programador e Web Designer'],
     typeSpeed: 70,
@@ -19,6 +21,7 @@ const typed = new Typed('#type-area', {
     loop: true
 });
 
+//Swiper JS (lib)
 const swiper = new Swiper('.swiper', {
     spaceBetween: 20,
     pagination: {
@@ -31,8 +34,10 @@ const swiper = new Swiper('.swiper', {
     }
 });
 
+// VanillaTilt (lib)
 VanillaTilt.init(cv_download);
 
+// focus and blur events on inputs
 document.querySelectorAll('.input-group input, .input-group textarea').forEach(el => {
     const label = el.parentNode.firstElementChild;
     el.addEventListener('focus', () => {
@@ -53,6 +58,7 @@ document.querySelectorAll('.input-group input, .input-group textarea').forEach(e
     });
 });
 
+// function that changes the mobile menu
 function toggleMenu() {
     menu_hamburger.classList.toggle('active');
     nav.classList.toggle('active');
@@ -61,6 +67,7 @@ function toggleMenu() {
 
 menu_hamburger.addEventListener('click', toggleMenu);
 
+// click events in the menu buttons
 document.querySelectorAll('header nav ul li').forEach((li, index) => {
     if(index != 4) {
         li.addEventListener('click', () => {
@@ -79,15 +86,17 @@ document.querySelectorAll('header nav ul li').forEach((li, index) => {
         li.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             document.body.classList.contains('dark-mode') ? localStorage.setItem('dark-mode', 'on') : localStorage.setItem('dark-mode', 'off');
-            
+            toggleMenu();
         })
     }
 });
 
+// effect on technologies topics
 window.addEventListener('scroll', () => {
     const calc = Math.ceil((scrollY - 975) / 200);
-    let topicOn = calc >= 0 ? calc : 0;
-    topicOn = topicOn >= 8 ? 8 : topicOn;
+    // let topicOn = calc >= 0 ? calc : 0;
+    // topicOn = topicOn >= 8 ? 8 : topicOn;
+    let topicOn = calc;
 
     technologies_topics.forEach(tec => {
         if(tec != technologies_topics[topicOn]) tec.classList.remove('on');
