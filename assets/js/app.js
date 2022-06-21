@@ -99,8 +99,9 @@ window.addEventListener('scroll', () => {
     let topicOn = calc;
 
     technologies_topics.forEach(tec => {
-        if(tec != technologies_topics[topicOn]) tec.classList.remove('on');
+        if(typeof technologies_topics[topicOn] != 'undefined') {
+            if(tec != technologies_topics[topicOn]) tec.classList.remove('on');
+            technologies_topics[topicOn].className = 'on';
+        }
     });
-
-    technologies_topics[topicOn].className = 'on';
 });
