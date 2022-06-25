@@ -65,6 +65,7 @@ header nav .logo {
     font-weight: 600;
     text-decoration: none;
     grid-column: 1 / 4;
+    white-space: nowrap;
 }
 
 header nav .menu-hamburger {
@@ -137,6 +138,10 @@ header nav ul li {
     white-space: nowrap;
 }
 
+header nav ul li i {
+    display: none !important;
+}
+
 header nav ul.active {
     max-width: 100%;
 }
@@ -174,6 +179,7 @@ header .header-content a {
     background: #fff;
     grid-column: 1 / 5;
     height: 45px;
+    max-width: 260px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -184,6 +190,7 @@ header .header-content a {
     border: none;
     color: #000;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 /* About me ------------------------------------ */
@@ -509,9 +516,12 @@ header .header-content a {
     background: var(--primary-blue);
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
     height: 525px;
+    max-width: 460px;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .dark-mode #portfolio .portfolio-content .card {
@@ -525,6 +535,9 @@ header .header-content a {
 #portfolio .portfolio-content .card .card-content {
     padding: 20px;
     color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 #portfolio .portfolio-content .card .card-content a {
@@ -552,10 +565,7 @@ header .header-content a {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
+    margin-top: auto;
 }
 
 #portfolio .portfolio-content .card .card-content div a {
@@ -671,6 +681,12 @@ header .header-content a {
     padding: 12px 10px;
     font-family: 'Noto Sans', sans-serif;
     outline: none;
+}
+
+#contact .contact-content .input-group input::-webkit-inner-spin-button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
 }
 
 .dark-mode #contact .contact-content .input-group input,
