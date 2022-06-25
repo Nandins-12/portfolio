@@ -3,6 +3,7 @@ const nav = document.querySelector('header nav ul');
 const cv_download = document.querySelector('.header-content a');
 const technologies_topics = document.querySelectorAll('.technologies-topics div');
 const scroll_areas = document.querySelectorAll('#about, #technologies, #skills,  #portfolio, #contact');
+const submit_form_contact = document.querySelector('form button');
 
 const callbackEffectTechnology = () => {
     const calc = Math.ceil((scrollY - 975) / 200);
@@ -37,6 +38,10 @@ const pageControl = {
                 VanillaTilt.init(cv_download, {
                     scale: 1.05
                 });
+                
+                VanillaTilt.init(submit_form_contact, {
+                    max: 10
+                });
             }
         }
     },
@@ -63,7 +68,10 @@ const pageControl = {
     },
 
     getSwiper() {
+        const swiper = document.querySelector('.swiper').swiper;
+
         if (window.innerWidth < 800) {
+            if(typeof swiper != 'undefined') swiper.destroy(true, true);
             new Swiper('.swiper', {
                 spaceBetween: 20,
                 pagination: {
@@ -75,7 +83,9 @@ const pageControl = {
                     prevEl: '.prev'
                 }
             });
+            if(typeof swiper != 'undefined') swiper.update();
         } else {
+            if(typeof swiper != 'undefined') swiper.destroy(true, true);
             new Swiper('.swiper', {
                 spaceBetween: 20,
                 slidesPerView: 3,
@@ -84,6 +94,7 @@ const pageControl = {
                     prevEl: '.prev'
                 }
             });
+            if(typeof swiper != 'undefined') swiper.update();
         }
     },
 
@@ -122,22 +133,41 @@ const pageControl = {
         // focus and blur events on inputs
         document.querySelectorAll('.input-group input, .input-group textarea').forEach(el => {
             const label = el.parentNode.firstElementChild;
-            el.addEventListener('focus', () => {
-                label.style.transform = 'translateY(-65%)';
-                label.style.padding = '6px 6px 4px 6px';
-                label.style.borderRadius = '16px';
-                label.style.color = '#fff';
-                label.style.fontSize = '0.8em';
-            });
-            el.addEventListener('blur', () => {
-                if(!el.value) {
-                    label.style.padding = '0';
-                    label.style.borderRadius = '0';
-                    label.style.color = 'rgba(255, 255, 255, 0.75)';
-                    label.style.transform = 'translateY(10px)';
-                    label.style.fontSize = '1em';
-                }
-            });
+            if(window.innerWidth < 800) {
+                el.addEventListener('focus', () => {
+                    label.style.transform = 'translateY(-65%)';
+                    label.style.padding = '6px 6px 4px 6px';
+                    label.style.borderRadius = '16px';
+                    label.style.color = '#fff';
+                    label.style.fontSize = '0.8em';
+                });
+                el.addEventListener('blur', () => {
+                    if(!el.value) {
+                        label.style.padding = '0';
+                        label.style.borderRadius = '0';
+                        label.style.color = 'rgba(255, 255, 255, 0.75)';
+                        label.style.transform = 'translateY(10px)';
+                        label.style.fontSize = '1em';
+                    }
+                });
+            } else {
+                el.addEventListener('focus', () => {
+                    label.style.transform = 'translateY(-65%)';
+                    label.style.padding = '6px 6px 4px 6px';
+                    label.style.borderRadius = '16px';
+                    label.style.color = '#0096C7';
+                    label.style.fontSize = '0.8em';
+                });
+                el.addEventListener('blur', () => {
+                    if(!el.value) {
+                        label.style.padding = '0';
+                        label.style.borderRadius = '0';
+                        label.style.color = 'rgba(0, 150, 199, 0.75)';
+                        label.style.transform = 'translateY(13px)';
+                        label.style.fontSize = '1em';
+                    }
+                });
+            }
         });
 
         menu_hamburger.addEventListener('click', pageControl.toggleMenu);
@@ -149,8 +179,27 @@ const pageControl = {
             })
         });
 
-        document.querySelectorAll('#portfolio .portfolio-content .card .card-content i.fa-angle-down').forEach( arrow => {
+        document.querySelectorAll('footer .navs nav:nth-child(2) ul li').forEach((li, index) => {
+            li.addEventListener('click', () => {
+                let scrolls = [
+                    600,
+                    600 + scroll_areas[0].clientHeight,
+                    600 + scroll_areas[0].clientHeight + scroll_areas[1].clientHeight + scroll_areas[2].clientHeight,
+                    600 + scroll_areas[0].clientHeight + scroll_areas[1].clientHeight + scroll_areas[2].clientHeight + scroll_areas[3].clientHeight
+                ];
+                            
+                window.scroll({top: scrolls[index], behavior: 'smooth'})
+            });
+        });
+
+        document.querySelectorAll('#portfolio .portfolio-content .card .card-content i.fa-angle-down').forEach((arrow, index) => {
+            const cards = document.querySelectorAll('#portfolio .portfolio-content .card');
+
             arrow.addEventListener('click', () => {
+                cards.forEach(card => {
+                    if(card != cards[index])card.classList.remove('active');
+                });
+
                 arrow.parentElement.parentElement.parentElement.classList.toggle('active');
             });
         });
@@ -170,6 +219,14 @@ const App = {
             pageControl.eventListeners();
             pageControl.effectTechnologiesTopics(callbackEffectTechnology);
             pageControl.libs.swiper = pageControl.getSwiper();
+
+            document.querySelectorAll('.input-group label').forEach(label => {
+                if(window.innerWidth < 800) {
+                    label.style.color = 'rgba(255, 255, 255, 0.75)';
+                } else {
+                    label.style.color = 'rgba(0, 150, 199, 0.75)';
+                }
+            });
         });
     }
 };

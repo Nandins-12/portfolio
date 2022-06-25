@@ -23,6 +23,7 @@
 body {
     font-family: 'Noto Sans', sans-serif;
     background: var(--primary-white);
+    overflow-x: hidden;
 }
 
 body.dark-mode {
@@ -472,6 +473,10 @@ header .header-content a {
     background: var(--primary-dark);
 }
 
+#portfolio .portfolio-content h1.second-head {
+    display: none;
+}
+
 #portfolio .portfolio-content .prev,
 #portfolio .portfolio-content .next {
     margin-top: 30px;
@@ -542,6 +547,10 @@ header .header-content a {
 
 #portfolio .portfolio-content .card .card-content a {
     color: #fff;
+}
+
+#portfolio .portfolio-content .card .card-content i.fa-angle-down {
+    display: none;
 }
 
 #portfolio .portfolio-content .card .card-content h1 {
@@ -633,12 +642,19 @@ header .header-content a {
     background: linear-gradient(to bottom, #240046, #5A189A);
 }
 
+#contact .contact-content img {
+    display: none;
+}
+
 #contact .contact-content .container {
     margin: 0;
 }
 
-#contact .contact-content h1 {
+#contact .contact-content .contact-area {
     grid-column: 1 / 7;
+}
+
+#contact .contact-content h1 {
     display: flex;
     justify-content: center;
     font-size: 24px;
@@ -646,10 +662,6 @@ header .header-content a {
     color: #fff;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 30px;
-}
-
-#contact .contact-content form {
-    grid-column: 1 / 7;
 }
 
 #contact .contact-content .input-group {
@@ -668,6 +680,10 @@ header .header-content a {
 
 .dark-mode #contact .contact-content .input-group label {
     background: var(--primary-purple);
+}
+
+#contact .contact-content .input-group textarea {
+    resize: none;
 }
 
 #contact .contact-content .input-group input,
@@ -717,22 +733,24 @@ footer {
     color: #fff;
 }
 
-footer h1 {
+footer .brand {
     grid-column: 1 / 7;
+}
+
+footer .brand h1 {
     font-size: 24px;
     font-weight: 600;
     margin: 50px 0 12px;
 }
 
-footer p {
-    grid-column: 1 / 7;
+footer .brand p {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 40px;
 }
 
-footer nav {
+footer .navs {
     grid-column: 1 / 7;
 }
 
@@ -763,10 +781,13 @@ footer nav.illustrations ul li a {
     text-decoration: underline;
 }
 
-footer p:last-child {
+footer p.copyright {
     margin-top: 20px;
     font-weight: 400;
     text-align: center;
+    grid-column: 1 / 7;
+    font-size: 0.8em;
+    margin-bottom: 30px;
 }
 
 /* Animation ----------------------------------- */
