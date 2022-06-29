@@ -148,17 +148,31 @@
         margin: auto 0;
     }
 
+    .dark-mode #about .illustration {
+        content: url('../images/About-me-pana-purple.svg');
+    }
+
     #about .about-content {
         grid-column: 8 / 13;
         background: none;
         color: #000;
         box-shadow: none;
+        border: none;
+    }
+
+    .dark-mode #about .about-content {
+        background: none;
+        color: #fff;
     }
 
     #about .about-content h1 {
         font-size: 36px;
         color: var(--primary-blue);
         text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.25);
+    }
+
+    .dark-mode #about .about-content h1 {
+        color: #fff;
     }
 
     #about .about-content p {
@@ -264,6 +278,10 @@
         margin-bottom: 100px;
     }
 
+    .dark-mode #skills {
+        background: none;
+    }
+
     #skills .skills-content {
         grid-column: 1 / 8;
         color: #fff;
@@ -275,6 +293,10 @@
         border-radius: 20px 100px 20px 20px;
         z-index: 1;
         margin: auto 0 auto -140px;
+    }
+
+    .dark-mode #skills .skills-content {
+        background: var(--secondary-purple);
     }
 
     #skills .skills-content h1 {
@@ -300,6 +322,12 @@
         grid-column: 8 / 13;
         animation: none;
         margin: auto 0;
+        width: 100%;
+    }
+
+    .dark-mode #skills img {
+        grid-column: 8 / 13;
+        width: 100%;
     }
 
     /* Swiper Customizations ------------------------- */
@@ -316,6 +344,10 @@
         margin-bottom: 100px;
     }
 
+    .dark-mode #portfolio {
+        background: var(--primary-dark);
+    }
+
     #portfolio h1.container {
         display: none;
     }
@@ -324,7 +356,7 @@
         display: none;
     }
 
-    #portfolio .portfolio-content {
+    #portfolio .portfolio-content, .dark-mode #portfolio .portfolio-content {
         background: none;
         box-shadow: none;
     }
@@ -335,6 +367,10 @@
         text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.25);
         margin-bottom: 40px;
         color: var(--primary-blue);
+    }
+
+    .dark-mode #portfolio .portfolio-content h1.second-head {
+        color: #fff;
     }
 
     #portfolio .portfolio-content .prev, #portfolio .portfolio-content .next {
@@ -351,7 +387,6 @@
 
     #portfolio .portfolio-content .card {
         border-radius: 0;
-        /* height: 429.25px; */
         margin: 0;
         max-height: 429.25px;
         transition: max-height 0.4s ease, box-shadow 0.4s ease;
@@ -361,6 +396,7 @@
         height: auto;
         max-height: 100%;
         box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+        margin-bottom: 30px;
     }
 
     #portfolio .portfolio-content .card .card-content div:first-child {
@@ -415,6 +451,15 @@
         margin-top: 20px;
     }
 
+    #portfolio .portfolio-content .card .card-content div:last-child a {
+        transition: 0.3s ease;
+    }
+
+    #portfolio .portfolio-content .card .card-content div:last-child a:hover {
+        background: #fff;
+        color: #000;
+    }
+
     /* Contact -------------------------------------- */
     #contact {
         margin-bottom: 90px;
@@ -434,7 +479,7 @@
         display: none;
     }
 
-    #contact .contact-content {
+    #contact .contact-content, .dark-mode #contact .contact-content {
         background: none;
         padding: 0;
     }
@@ -446,16 +491,25 @@
     #contact .contact-content img {
         grid-column: 1 / 8;
         display: block;
+        width: 100%;
+    }
+
+    .dark-mode #contact .contact-content img {
+        content: url('../images/Contact-us-bro-purple.svg');
     }
 
     #contact .contact-content .contact-area {
         background: var(--secondary-white);
         grid-column: 8 / 13;
         padding: 45px 200px 45px 50px;
-        border-radius: 100px 0 0 20px;
+        border-radius: 100px 20px 20px 20px;
         box-shadow: 2px 4px 28px rgba(0, 0, 0, 0.25);
         margin-right: -150px;
         margin: auto -150px auto 0;
+    }
+
+    .dark-mode #contact .contact-content .contact-area {
+        background: linear-gradient(to left bottom, #240046, #7C20D4);
     }
 
     #contact .contact-content .contact-area h1 {
@@ -465,6 +519,10 @@
         display: block;
         text-align: center;
         margin-bottom: 40px;
+    }
+
+    .dark-mode #contact .contact-content .contact-area h1 {
+        color: #fff;
     }
 
     #contact .contact-content .contact-area form {
@@ -489,8 +547,16 @@
         cursor: pointer;
     }
 
+    .dark-mode #contact .contact-content .contact-area form button {
+        background: var(--primary-dark);
+    }
+
     #contact .contact-content .contact-area form button:hover {
         background: var(--secondary-blue);
+    }
+
+    .dark-mode #contact .contact-content .contact-area form button:hover {
+        background: #131414;
     }
 
     #contact .contact-content .contact-area form input,
@@ -500,10 +566,20 @@
         color: var(--primary-blue);
     }
 
+    .dark-mode #contact .contact-content .contact-area form input,
+    .dark-mode #contact .contact-content .contact-area form textarea {
+        border: 2px solid #fff;
+        color: #fff;
+    }
+
     #contact .contact-content .contact-area form label {
         transform: translateY(13px);
         background: #fff;
         color: rgba(0, 150, 199, 0.75);
+    }
+
+    .dark-mode #contact .contact-content .contact-area form label {
+        color: rgba(255, 255, 255, 0.75);
     }
 
     #contact .contact-content .contact-area form input {
@@ -518,6 +594,10 @@
     footer {
         background: var(--secondary-blue);
         padding: 50px 0;
+    }
+
+    .dark-mode footer {
+        background: var(--secondary-purple);
     }
 
     footer .brand {

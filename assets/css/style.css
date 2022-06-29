@@ -408,11 +408,11 @@ header .header-content a {
     grid-column: 1 / 7;
     margin: 0 auto 30px;
     animation: scale infinite ease-out alternate 3s;
-    content: url('../images/Hand coding-bro.svg')
+    content: url('../images/Hand-coding-bro.svg')
 }
 
 .dark-mode #skills img {
-    content: url('../images/Hand coding-bro-purple.svg');
+    content: url('../images/Hand-coding-bro-purple.svg');
 }
 
 /* Swiper Customizations ------------------------- */
@@ -800,3 +800,5 @@ footer p.copyright {
         transform: scale(1.05);
     }
 }
+
+/* Loading Page --------------------------------------- */
