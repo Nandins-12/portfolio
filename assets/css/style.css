@@ -802,4 +802,59 @@ footer p.copyright {
     }
 }
 
+/* Modal --------------------------------------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: none;
+}
+
+.modal-overlay.active {
+    display: initial;
+}
+
+.modal-overlay .modal {
+    background: var(--primary-purple);
+    color: #fff;
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform: translateX(40px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease; 
+}
+
+.modal-overlay.active .modal {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.modal-overlay .modal h1 {
+    margin-bottom: 20px;
+}
+
+.modal-overlay .modal p {
+    margin-bottom: 20px;
+}
+
+.modal-overlay .modal button {
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border: 0;
+}
+
+.modal-overlay .modal button:hover {
+    background: #e0e0e0;
+}
+
 /* Loading Page --------------------------------------- */

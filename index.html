@@ -27,6 +27,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="assets/js/vanilla-tilt.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="assets/js/app.js" defer></script>
     
 
@@ -279,23 +280,25 @@
                     <img src="assets/images/Contact-us-bro.svg" alt="">
                     <div class="contact-area">
                         <h1>Contato</h1>
-                        <form action="">
+                        <form action="https://formsubmit.co/f23888f0f2300dfaa4c3a8f9fdf79e10" method="post">
                             <div class="input-group">
                                 <label for="nome">Nome</label>
-                                <input type="text" name="Nome" id="nome">
+                                <input type="text" name="Nome" id="nome" required>
                             </div>
                             <div class="input-group">
                                 <label for="telefone">Telefone</label>
-                                <input type="number" name="Telefone" id="telefone">
+                                <input type="number" name="Telefone" id="telefone" required>
                             </div>
                             <div class="input-group">
                                 <label for="email">Email</label>
-                                <input type="email" name="Email" id="email">
+                                <input type="email" name="Email" id="email" required>
                             </div>
                             <div class="input-group">
                                 <label for="mensagem">Mensagem</label>
                                 <textarea name="Mensagem" id="mensagem" cols="30" rows="10"></textarea>
                             </div>
+                            <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html?sent">
+                            <input type="hidden" name="_captcha" value="false">
                             <button type="submit">Enviar</button>
                         </form>
                     </div>
@@ -357,5 +360,13 @@
             <p class="copyright">&copy; Desenvolvido e programado por Fernando Dias</p>
         </div>
     </footer>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <h1>Mensagem enviada com sucesso!</h1>
+            <p>Entrarei em contato assim que possível...</p>
+            <button type="button">Fechar</button>
+        </div>        
+    </div>
 </body>
 </html>

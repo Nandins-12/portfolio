@@ -43,6 +43,76 @@ const pageControl = {
                     max: 10
                 });
             }
+        },
+
+        scrollReveal() {
+            if(window.innerWidth >= 800) {
+                ScrollReveal({
+                    delay: 400,
+                    origin: 'right',
+                    distance: '200px',
+                    duration: 1800
+                });
+
+                ScrollReveal().reveal('#about .illustration', {
+                    origin: 'bottom'
+                });
+                ScrollReveal().reveal('#about .about-content h1');
+                ScrollReveal().reveal('#about .about-content p');
+                ScrollReveal().reveal('#about .about-content h2');
+                ScrollReveal().reveal('#technologies', {
+                    origin: 'left',
+                    distance: '600px'
+                });
+                ScrollReveal().reveal('#technologies h1', {
+                    origin: 'bottom',
+                    interval: 300
+                });
+                ScrollReveal().reveal('#technologies .technologies-topics div', {
+                    interval: 400,
+                    origin: 'right',
+                    distance: '500px',
+                    rotate: {
+                        x: 120,
+                        y: 120
+                    },
+                    scale: 0.2,
+                    interval: 220
+                });
+
+                ScrollReveal().reveal('#skills .skills-content', {
+                    origin: 'left',
+                    distance: '700px'
+                })
+
+                ScrollReveal().reveal('#skills img', {
+                    origin: 'bottom'
+                });
+                
+                ScrollReveal().reveal('#portfolio', {
+                    origin: 'right',
+                    distance: '600px'
+                });
+
+                ScrollReveal().reveal('#portfolio .portfolio-content .card', {
+                    origin: 'bottom',
+                    distance: '400px',
+                    delay: 800,
+                    interval: 300
+                })
+
+                ScrollReveal().reveal('#contact h1.container', {
+                    origin: 'top'
+                })
+
+                ScrollReveal().reveal('#contact .contact-content img', {
+                    origin: 'bottom'
+                })
+
+                ScrollReveal().reveal('#contact .contact-content .contact-area', {
+                    origin: 'right'
+                })
+            }
         }
     },
 
@@ -286,6 +356,23 @@ const pageControl = {
         })
     },
 
+    toggleModal() {
+        const modal_overlay = document.querySelector('.modal-overlay');
+
+        if(modal_overlay.classList.contains('active')){
+            modal_overlay.classList.toggle('active');
+            window.location.href = window.location.href.replace('?sent', '');
+        } else {
+            modal_overlay.classList.toggle('active');
+        }
+    },
+
+    verifyEmail() {
+        if(window.location.search == '?sent') {
+            pageControl.toggleModal();
+        }
+    },
+
     eventListeners() {
         // enables the menu or disables it in mobile view
         menu_hamburger.addEventListener('click', pageControl.toggleMenu);
@@ -340,12 +427,16 @@ const pageControl = {
                 pageControl.labelEvents.blur(el);
             });
         });
+
+        document.querySelector('.modal button').addEventListener('click', pageControl.toggleModal);
     }
 };
 
 const App = {
     init() {
+        pageControl.verifyEmail();
         pageControl.libs.vanillaTilt();
+        pageControl.libs.scrollReveal();
         pageControl.initDarkMode();
         pageControl.effectTechnologiesTopics(callbackEffectTechnology);
         pageControl.eventListeners();
