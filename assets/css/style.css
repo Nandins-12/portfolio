@@ -408,7 +408,8 @@ header .header-content a {
     grid-column: 1 / 7;
     margin: 0 auto 30px;
     animation: scale infinite ease-out alternate 3s;
-    content: url('../images/Hand-coding-bro.svg')
+    content: url('../images/Hand-coding-bro.svg');
+    width: 100%;
 }
 
 .dark-mode #skills img {

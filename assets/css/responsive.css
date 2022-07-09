@@ -8,6 +8,58 @@
     header .header-content h1 {
         grid-column: 3 / 13;
     }
+
+    #skills .skills-content {
+        grid-column: 1 / 12;
+        color: #fff;
+        background: var(--secondary-blue);
+        display: flex;
+        flex-direction: column;
+        column-gap: 20px;
+        padding: 20px 40px 50px 140px;
+        border-radius: 20px 100px 20px 20px;
+        z-index: 1;
+        margin: auto 0 auto -140px;
+    }
+
+    .dark-mode #skills .skills-content {
+        background: var(--secondary-purple);
+    }
+
+    #skills img {
+        display: none;
+    }
+}
+
+@media (min-width: 900px) {
+    #skills img {
+        grid-column: 8 / 13;
+        animation: none;
+        margin: auto 0;
+        width: 100%;
+    }
+
+    #skills .skills-content {
+        grid-column: 1 / 8;
+        color: #fff;
+        background: var(--secondary-blue);
+        display: flex;
+        flex-direction: column;
+        column-gap: 20px;
+        padding: 20px 40px 50px 140px;
+        border-radius: 20px 100px 20px 20px;
+        z-index: 1;
+        margin: auto 0 auto -140px;
+    }
+
+    .dark-mode #skills .skills-content {
+        background: var(--secondary-purple);
+    }
+    
+    .dark-mode #skills img {
+        grid-column: 8 / 13;
+        width: 100%;
+    }
 }
 
 @media (min-width: 900px) and (max-width: 1069.98px) {
@@ -19,6 +71,119 @@
 @media (min-width: 1070px) {
     header .header-content h1 {
         grid-column: 3 / 10;
+    }
+}
+
+
+@media (min-width: 800px) and (max-width: 1079.98px) {
+    #portfolio .portfolio-content .card {
+        border-radius: 0;
+        margin: 0 auto;
+        max-height: 430px;
+        height: 430px;
+        max-width: 427px;
+        transition: max-height 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    #contact h1.container {
+        margin-bottom: 40px;
+    }
+
+    #contact .contact-content img {
+        display: none;
+    }
+
+    #contact .contact-content .contact-area {
+        background: var(--secondary-white);
+        grid-column: 2 / 12;
+        padding: 45px 50px;
+        border-radius: 100px 20px 20px 20px;
+        box-shadow: 2px 4px 28px rgba(0, 0, 0, 0.25);
+        margin: auto 0;
+    }
+}
+
+@media (min-width: 1080px) {
+    #contact h1.container {
+        margin-bottom: 20px;
+    }
+
+    #contact .contact-content img {
+        grid-column: 1 / 8;
+        display: block;
+        width: 100%;
+    }
+
+    #contact .contact-content .contact-area {
+        background: var(--secondary-white);
+        grid-column: 8 / 13;
+        padding: 45px 50px;
+        border-radius: 100px 20px 20px 20px;
+        box-shadow: 2px 4px 28px rgba(0, 0, 0, 0.25);
+        margin: auto 0;
+    }
+
+    /* Footer --------------------------------------------- */ 
+    footer {
+        background: var(--secondary-blue);
+        padding: 50px 0;
+    }
+
+    .dark-mode footer {
+        background: var(--secondary-purple);
+    }
+
+    footer .brand {
+        grid-column: 1 / 5;
+        grid-row: 1;
+    }
+
+    footer .brand h1 {
+        font-size: 40px;
+        margin: 0 0 15px;
+    }
+
+    footer .brand p {
+        font-size: 1em;
+        margin: 0;
+    }
+
+    footer .navs {
+        grid-column: 5 / 15;
+        grid-row: 1;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    footer .navs nav:nth-child(2) {
+        order: 1;
+    }
+
+    footer .navs nav:nth-child(1) {
+        order: 2;
+    }
+
+    footer .navs nav:nth-child(3) {
+        order: 3;
+    }
+
+    footer .navs nav:nth-child(2) ul li {
+        cursor: pointer;
+    }
+
+    footer .navs nav h2 {
+        font-size: 20px;
+    }
+
+    footer nav ul li, footer nav ul li a {
+        font-size: 14px;
+    }
+
+    footer p.copyright {
+        grid-row: 2;
+        grid-column: 1 / 13;
+        font-size: 14px;
+        margin: 0;
     }
 }
 
@@ -150,6 +315,7 @@
 
     .dark-mode #about .illustration {
         content: url('../images/About-me-pana-purple.svg');
+        width: 100%;
     }
 
     #about .about-content {
@@ -189,7 +355,7 @@
     /* Technologies ---------------------------------- */
     #technologies {
         background: var(--secondary-white);
-        padding: 30px 0 60px;
+        padding: 30px 20px 60px;
         margin-bottom: 100px;
         box-shadow: 0 12px 16px rgba(0, 0, 0, 0.25);
     }
@@ -203,6 +369,7 @@
         font-size: 36px;
         margin-bottom: 50px;
         text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.25);
+        padding: 0;
     }
 
     #technologies h1::after {
@@ -282,23 +449,6 @@
         background: none;
     }
 
-    #skills .skills-content {
-        grid-column: 1 / 8;
-        color: #fff;
-        background: var(--secondary-blue);
-        display: flex;
-        flex-direction: column;
-        column-gap: 20px;
-        padding: 20px 40px 50px 140px;
-        border-radius: 20px 100px 20px 20px;
-        z-index: 1;
-        margin: auto 0 auto -140px;
-    }
-
-    .dark-mode #skills .skills-content {
-        background: var(--secondary-purple);
-    }
-
     #skills .skills-content h1 {
         color: #fff;
         text-shadow: none;
@@ -318,18 +468,6 @@
         margin-left: 30px;
     }
 
-    #skills img {
-        grid-column: 8 / 13;
-        animation: none;
-        margin: auto 0;
-        width: 100%;
-    }
-
-    .dark-mode #skills img {
-        grid-column: 8 / 13;
-        width: 100%;
-    }
-
     /* Swiper Customizations ------------------------- */
     #portfolio .portfolio-content .swiper-wrapper {
         grid-column: 1 / 13;
@@ -339,7 +477,7 @@
     #portfolio {
         background: var(--secondary-white);
         padding-top: 30px;
-        height: 543.25px;
+        /* height: 543.25px; */
         box-shadow: 0 12px 16px rgba(0, 0, 0, 0.25);
         margin-bottom: 100px;
     }
@@ -359,6 +497,8 @@
     #portfolio .portfolio-content, .dark-mode #portfolio .portfolio-content {
         background: none;
         box-shadow: none;
+        height: 100%;
+        max-height: 514px;
     }
 
     #portfolio .portfolio-content h1.second-head {
@@ -387,8 +527,9 @@
 
     #portfolio .portfolio-content .card {
         border-radius: 0;
-        margin: 0;
-        max-height: 429.25px;
+        margin: 0 auto;
+        max-height: 430px;
+        height: 430px;
         transition: max-height 0.4s ease, box-shadow 0.4s ease;
     }
 
@@ -471,7 +612,6 @@
         text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.25);
         display: block;
         margin-top: 0;
-        margin-bottom: 20px;
         text-align: center;
     }
 
@@ -488,24 +628,8 @@
         margin: 0 auto;
     }
 
-    #contact .contact-content img {
-        grid-column: 1 / 8;
-        display: block;
-        width: 100%;
-    }
-
     .dark-mode #contact .contact-content img {
         content: url('../images/Contact-us-bro-purple.svg');
-    }
-
-    #contact .contact-content .contact-area {
-        background: var(--secondary-white);
-        grid-column: 8 / 13;
-        padding: 45px 200px 45px 50px;
-        border-radius: 100px 20px 20px 20px;
-        box-shadow: 2px 4px 28px rgba(0, 0, 0, 0.25);
-        margin-right: -150px;
-        margin: auto -150px auto 0;
     }
 
     .dark-mode #contact .contact-content .contact-area {
@@ -588,68 +712,5 @@
 
     #contact .contact-content .contact-area form textarea {
         height: 150px;
-    }
-
-    /* Footer --------------------------------------------- */ 
-    footer {
-        background: var(--secondary-blue);
-        padding: 50px 0;
-    }
-
-    .dark-mode footer {
-        background: var(--secondary-purple);
-    }
-
-    footer .brand {
-        grid-column: 1 / 5;
-        grid-row: 1;
-    }
-
-    footer .brand h1 {
-        font-size: 40px;
-        margin: 0 0 15px;
-    }
-
-    footer .brand p {
-        font-size: 1em;
-        margin: 0;
-    }
-
-    footer .navs {
-        grid-column: 5 / 15;
-        grid-row: 1;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    footer .navs nav:nth-child(2) {
-        order: 1;
-    }
-
-    footer .navs nav:nth-child(1) {
-        order: 2;
-    }
-
-    footer .navs nav:nth-child(3) {
-        order: 3;
-    }
-
-    footer .navs nav:nth-child(2) ul li {
-        cursor: pointer;
-    }
-
-    footer .navs nav h2 {
-        font-size: 20px;
-    }
-
-    footer nav ul li, footer nav ul li a {
-        font-size: 14px;
-    }
-
-    footer p.copyright {
-        grid-row: 2;
-        grid-column: 1 / 13;
-        font-size: 14px;
-        margin: 0;
     }
 }
