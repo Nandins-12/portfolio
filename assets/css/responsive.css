@@ -713,4 +713,30 @@
     #contact .contact-content .contact-area form textarea {
         height: 150px;
     }
+
+    /* Modal ----------------------------------- */ 
+    .modal-overlay .modal {
+        background: var(--secondary-blue);
+        color: #fff;
+        max-width: 600px;
+        margin: 60px auto;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        transform: translateX(40px);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease; 
+    }
+
+    .modal-overlay .modal button {
+        padding: 10px 30px;
+        border-radius: 10px;
+        color: #000;
+        background: #fff;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        border: 0;
+        width: auto;
+    }
 }

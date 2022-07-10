@@ -51,7 +51,8 @@ const pageControl = {
                     delay: 400,
                     origin: 'right',
                     distance: '200px',
-                    duration: 1800
+                    duration: 1800,
+                    mobile: false
                 });
 
                 ScrollReveal().reveal('#about .illustration', {
@@ -112,7 +113,29 @@ const pageControl = {
                 ScrollReveal().reveal('#contact .contact-content .contact-area', {
                     origin: 'right'
                 })
-            }
+            } 
+        },
+
+        fixScrollReveal() {
+            ScrollReveal().destroy();
+            document.querySelectorAll(`
+                #about .illustration,
+                #about .about-content h1,
+                #about .about-content p,
+                #about .about-content h2,
+                #technologies,
+                #technologies h1,
+                #technologies .technologies-topics div,
+                #skills .skills-content,
+                #skills img,
+                #portfolio,
+                #portfolio .portfolio-content .card,
+                #contact h1.container,
+                #contact .contact-content img,
+                #contact .contact-content .contact-area
+            `).forEach(el => {
+                el.style = '';
+            });
         }
     },
 
@@ -361,16 +384,30 @@ const pageControl = {
 
         if(modal_overlay.classList.contains('active')){
             modal_overlay.classList.toggle('active');
-            window.location.href = window.location.href.replace('?sent', '');
+            localStorage.setItem('sentEmail', 'false');
         } else {
             modal_overlay.classList.toggle('active');
         }
+        console.log('teste');
     },
 
     verifyEmail() {
-        if(window.location.search == '?sent') {
+        if(localStorage.getItem('sentEmail') == 'true') {
             pageControl.toggleModal();
         }
+    },
+
+    windowLoad() {
+        const preloader = document.querySelector('.preloader');
+        preloader.style.opacity = 0;
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 700);
+        document.querySelectorAll('header, main, footer').forEach(el => {
+            el.style.opacity = 1;
+        });
+
+        document.body.classList.remove('menu-active');
     },
 
     eventListeners() {
@@ -428,7 +465,16 @@ const pageControl = {
             });
         });
 
+        // close modal
         document.querySelector('.modal button').addEventListener('click', pageControl.toggleModal);
+
+        // preloader
+        window.addEventListener('load', pageControl.windowLoad);
+
+        // sentEmail in localStorage
+        document.querySelector('form button').addEventListener('click', () => {
+            localStorage.setItem('sentEmail', true);
+        });
     }
 };
 
@@ -444,6 +490,7 @@ const App = {
 
         // fix responsive
         window.addEventListener('resize', () => {
+            pageControl.libs.fixScrollReveal();
             pageControl.effectTechnologiesTopics(callbackEffectTechnology);
             pageControl.libs.swiper = pageControl.getSwiper();
         });
