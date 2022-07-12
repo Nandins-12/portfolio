@@ -117,9 +117,7 @@ header nav ul {
     height: 260vh;
     width: 70vw;
     max-width: 0;
-    background: rgba(0, 180, 216, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: var(--secondary-blue);
     overflow: hidden;
     transition: max-width 0.75s ease;
     z-index: 9999;
@@ -127,16 +125,21 @@ header nav ul {
 }
 
 .dark-mode header nav ul {
-    background: rgba(124, 32, 212, 0.6);
+    background: var(--tertiary-purple);
 }
 
 header nav ul li {
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
-    text-indent: 30px;
+    margin: 0 30px;
     line-height: 60px;
     white-space: nowrap;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+header nav ul li:last-child {
+    border: none;
 }
 
 header nav ul li i {
@@ -674,9 +677,11 @@ header .header-content a {
     position: absolute;
     color: rgba(255, 255, 255, 0.75);
     left: 12px;
-    transform: translateY(10px);
+    transform: translateY(12px);
+    line-height: 1em;
     background: #007399;
     transition: 0.4s ease;
+    /* border: 1px solid red; */
 }
 
 .dark-mode #contact .contact-content .input-group label {
