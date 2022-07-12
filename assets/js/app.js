@@ -201,7 +201,7 @@ const pageControl = {
                         label.style.padding = '0';
                         label.style.borderRadius = '0';
                         label.style.color = 'rgba(0, 150, 199, 0.75)';
-                        label.style.transform = 'translateY(13px)';
+                        label.style.transform = 'translateY(16px)';
                         label.style.fontSize = '1em';
                     }
                 } else {
@@ -209,7 +209,7 @@ const pageControl = {
                         label.style.padding = '0';
                         label.style.borderRadius = '0';
                         label.style.color = 'rgba(255, 255, 255, 0.75)';
-                        label.style.transform = 'translateY(13px)';
+                        label.style.transform = 'translateY(16px)';
                         label.style.fontSize = '1em';
                     }
                 }
@@ -325,13 +325,13 @@ const pageControl = {
                     label.style.padding = '0';
                     label.style.borderRadius = '0';
                     label.style.color = 'rgba(0, 150, 199, 0.75)';
-                    label.style.transform = 'translateY(13px)';
+                    label.style.transform = 'translateY(16px)';
                     label.style.fontSize = '1em';
                 } else {
                     label.style.padding = '0';
                     label.style.borderRadius = '0';
                     label.style.color = 'rgba(255, 255, 255, 0.75)';
-                    label.style.transform = 'translateY(13px)';
+                    label.style.transform = 'translateY(16px)';
                     label.style.fontSize = '1em';
                 }
             }
