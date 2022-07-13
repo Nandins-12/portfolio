@@ -889,3 +889,41 @@ header, main, footer {
     z-index: 9999;
     transition: opacity 0.7s;
 }
+
+/* Button Home ------------------------------------ */
+button.back-to-home {
+    position: fixed;
+    right: -9999px;
+    bottom: 12px;
+    padding: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: 99;
+}
+
+.dark-mode button.back-to-home {
+    background: var(--primary-purple);
+}
+
+.dark-mode button.back-to-home:hover {
+    background: #4d1685;
+}
+
+button.back-to-home:hover {
+    background: #e2e2e2;
+}
+
+button.back-to-home i {
+    font-size: 2.2em;
+    color: var(--primary-blue);
+    transition: 0.3s ease;
+}
+
+.dark-mode button.back-to-home i {
+    color: #fff;
+}

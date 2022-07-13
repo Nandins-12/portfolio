@@ -343,6 +343,9 @@ const pageControl = {
 
         if(window.innerWidth > 800) {
             switch(index) {
+                case 0:
+                    scroll = 0;
+                    break;
                 case 1:
                     scroll = 600;
                     break;
@@ -394,6 +397,18 @@ const pageControl = {
     verifyEmail() {
         if(localStorage.getItem('sentEmail') == 'true') {
             pageControl.toggleModal();
+        }
+    },
+
+    verifyButtonBackToHome() {
+        const button = document.querySelector('.back-to-home');
+
+        if(window.scrollY > 300) {
+            button.style.right = '12px';
+            button.style.opacity = 1;
+        } else {
+            button.style.right = '-9999px';
+            button.style.opacity = 0;
         }
     },
 
@@ -475,6 +490,12 @@ const pageControl = {
         document.querySelector('form button').addEventListener('click', () => {
             localStorage.setItem('sentEmail', true);
         });
+
+        window.addEventListener('scroll', pageControl.verifyButtonBackToHome);
+
+        document.querySelector('.back-to-home').addEventListener('click', () => {
+            pageControl.scrollPage(0);
+        });
     }
 };
 
@@ -486,6 +507,7 @@ const App = {
         pageControl.initDarkMode();
         pageControl.effectTechnologiesTopics(callbackEffectTechnology);
         pageControl.eventListeners();
+        pageControl.verifyButtonBackToHome();
         pageControl.libs.swiper = pageControl.getSwiper();
 
         // fix responsive
