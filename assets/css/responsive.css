@@ -545,6 +545,8 @@
         margin: 0;
         align-items: center;
         margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
     }
 
     #portfolio .portfolio-content .card .card-content h1 {
