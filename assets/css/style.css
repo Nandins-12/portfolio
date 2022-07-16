@@ -574,7 +574,7 @@ header .header-content a {
     display: none;
 }
 
-#portfolio .portfolio-content .card .card-content div {
+#portfolio .portfolio-content .card .card-content div:last-child {
     display: flex;
     justify-content: space-between;
     gap: 10px;
