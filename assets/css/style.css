@@ -48,7 +48,7 @@ h1 {
 /* Header ---------------------------------- */
 header {
     height: 600px;
-    background: url('../images/banner.jpg') center, linear-gradient(to bottom, #015092, #012341);
+    background: url('../images/banner.webp') center, linear-gradient(to bottom, #015092, #012341);
     background-size: cover;
     border-radius: 0 0 80px 0;
     box-shadow: 0 12px 18px rgba(0, 150, 199, 0.40);
