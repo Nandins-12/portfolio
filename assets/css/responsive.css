@@ -213,6 +213,7 @@
         width: auto;
         max-width: initial;
         background: none;
+        -webkit-backdrop-filter: none;
         backdrop-filter: none;
         box-shadow: none;
         grid-column: 4 / 13;

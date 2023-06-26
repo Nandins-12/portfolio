@@ -706,9 +706,9 @@ header .header-content a {
 }
 
 #contact .contact-content .input-group input::-webkit-inner-spin-button {
-    appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
+    appearance: none;
 }
 
 .dark-mode #contact .contact-content .input-group input,
